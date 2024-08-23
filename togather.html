@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="images/favicon.png">
+    <title>Mees Groenhuyzen - To-Gather</title>
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900&amp;display=swap" rel="stylesheet">
+    <!-- end font -->
+
+    <link rel="stylesheet" href="css/loader.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+	<!-- loader -->
+    <div class="loader-body" id="loader">
+		<div class="loader"></div>
+	</div>
+    <!-- loader -->
+
+    <!-- header -->
+    <header id="game">
+        <!-- game intro -->
+        <div class="game-intro segments">
+            <div class="container">
+                <div class="intro-content box-content">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-sm-12 col-xs-12">
+                            <div class="intro-caption">
+                                <h2>To-Gather</h2>
+                                <a href="https://store.steampowered.com/app/2225710/ToGather/" class="button">View</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="intro-image">
+                                <img src="images/portfolio2.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end game intro -->
+
+    </header>
+    <!-- end header -->
+
+    <!-- about -->
+    <div id="about" class="about segments">
+        <div class="container">
+            <div class="box-content">
+				<img src="images/spider-squirrels.png" class="content-aligned"/>
+                        <div class="content-left">
+                            <div class="section-title section-title-left">
+                                <h3>About The Game</h3>
+                            </div>
+                            <div class="content">
+                                <p>To-Gather is a Co-Op Survival Story Game I've been working on with 3 other people who follow the same study. We are planning on putting this game on steam, so far it's all going according to plan and you'll soon be able to purchase the game!</p>
+                            </div>
+                       </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- end about -->
+	
+	 <!-- info -->
+    <div id="info" class="info segments">
+        <div class="container">
+            <div class="box-content">
+				<div class="section-title">
+					<h2>My Work</h2>
+				</div>
+                        <div class="content-left">
+                            <div class="section-title section-title-left">
+                                <h3>Things I've Worked On</h3>
+                            </div>
+							<dl>
+								<li><span>Player Info Script</span> - General Info Storage for each player</li>
+								<li><span>Player Movement Script</span> - Responsible for all the player movement</li>
+								<li><span>Inventory, Held Item & Gear Script</span> - All the 'Storages' the player has</li>
+								<li><span>Building System</span> - System used for building all the buildables in the game</li>
+								<li><span>Crafting System</span> - System used for all the crafting in the game</li>
+								<li><span>Interact System</span> - System that manages all the interactable things in the scene, excluding pickups</li>
+								<li><span>UI Manager</span> - Manager used for UI so it doesn't overlay each other & to manage binds</li>
+								<li><span>Tool Tips</span> - Item Tooltips displayed when hovering over the items</li>
+								<li><span>Pickup Manager</span> - Manages which item you're gonna pick up based on distance & displays a particle making the item more visable</li>
+								<li><span>Water Suffucation</span> - Makes you lose health over time when underwater for too long</li>
+								<li><span>Water Muffle & Blur</span> - Blurs your vision & Muffles the sound of the game making it feel like you truly are under waters</li>
+								<li><span>WIP Enemy Heatmap</span> - Wandering System for the Enemies based on where you've been active the most throughout the day</li>
+							</dl>
+
+                        </div>
+				
+                        <div class="content-left">
+                            <div class="section-title section-title-left">
+                                <h3>Inventory & Item System</h3>
+                            </div>
+                            <p>The <span>Inventory</span> & <span>Item System</span> are very adjustable. The Base of the System is called '<span>Container</span>', Container is a general storage for '<span>Resources</span>', making it easily expandable for things such as an <span>Inventory</span> or <span>Chest</span>. 
+							In the Container Script there are a couple options. <span>Slots</span>, which is a collection containing all the <span>Slots</span> in a List. The reason this is a list is for expansion, with in mind the idea that the inventory can always be <span>expanded</span> with an extra slot for lets say a <span>Backpack</span>. 
+							Other than that there's also a checkbox called <span>Online</span>. This is used to <span>Sync</span> the items over network.</p>
+                        </div>
+                    	<img src="images/inventory-inspector.png" class="content-aligned"/>
+						
+						<div class="content-left">
+                            <p>The <span>Storage System</span> works as following. There's one component called <span>Slot</span>, Slot receives the input from the user, and sends it over to <span>Storage</span>, the Storage then manages what to do with it. 
+							in case of the <span>Inventory</span> it does the following:</p>
+                        </div>
+                    	<img src="images/SlotClick-Code.png" class="content-aligned"/>
+						<img src="images/inventory.gif" class="content-gif"/>
+
+						<div class="content-left">
+                            <p>Now the <span>Item System</span>. The Item System works as following; There's 1 script called <span>Resource</span>. Resource is a ScriptableObject containing the <span>Name</span> of the item, a <span>Description</span> of the item, the <span>Maximum Amount</span> of how many one stack can contain and the Type of item, 
+							which is used for <span>Specific Slots</span> such as a <span>Head Gear</span>. Other than those variables the script also contains three methods; <span>GetSprite()</span>, <span>GetPickupPath()</span>, and <span>GetHeldPath()</span>. 
+							These methods all work in a simular way, by getting the wanted type by Path automatically, so you don't have to manually assign them each time you make an item, making it easier for everyone involved to create the wanted <span>Resource</span>.</p>
+                        </div>
+						
+						<img src="images/slot-code.png" class="content-aligned"/>
+						
+						<div class="content-left">
+                           <div class="section-title section-title-left">
+                               <h3>Tooltips</h3>
+                           </div>
+                           <p>Now the <span>Tooltips</span>, the Tooltips are quite simple and work by shooting a <span>Raycast</span> at the position of the mouse, checking all the hit <span>UI Elements</span> for a <span>Slot Script</span>. If the Slot Script has been found it'll check if the Slot has an <span>Item</span>, if so It'll grab the Display Name and set the Text Element's text to the Display Name. 
+						   The '<span>Held Item</span>' slot won't display the <span>Tooltip</span>, because the tooltip ignores <span>Raycast</span> on the Held Item slot</p>
+                        </div>
+                    	<img src="images/tooltip-code.png" class="content-aligned"/>
+								
+            </div>
+        </div>
+    </div>
+    <!-- end about -->
+
+    <!-- footer -->
+    <div class="footer segments">
+        <div class="container">
+            <div class="box-content">
+                <p>Copyright © All Right Reserved</p>
+            </div>
+        </div>
+    </div>
+    <!-- end footer -->
+
+	<script src="js/loader.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.filterizr.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+</html>

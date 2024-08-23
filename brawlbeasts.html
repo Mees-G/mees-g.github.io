@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="images/favicon.png">
+    <title>Mees Groenhuyzen - To-Gather</title>
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900&amp;display=swap" rel="stylesheet">
+    <!-- end font -->
+
+    <link rel="stylesheet" href="css/loader.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+	<!-- loader -->
+    <div class="loader-body" id="loader">
+		<div class="loader"></div>
+	</div>
+    <!-- loader -->
+	
+    <!-- header -->
+    <header id="game">
+        <!-- game intro -->
+        <div class="game-intro segments">
+            <div class="container">
+                <div class="intro-content box-content">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-sm-12 col-xs-12">
+                            <div class="intro-caption">
+                                <h2>Brawl-Beasts</h2>
+								<a href="https://youtu.be/G8fnEzyZ9jM" class="button">View Gameplay</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="intro-image">
+                                <img src="images/portfolio1.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end game intro -->
+
+    </header>
+    <!-- end header -->
+
+    <!-- about -->
+    <div id="about" class="about segments">
+        <div class="container">
+            <div class="box-content">
+                        <div class="content-left">
+                            <div class="section-title section-title-left">
+                                <h3>About The Game</h3>
+                            </div>
+                            <div class="content">
+                                <p>Brawl-Beasts is an online party game in which you can brawl your friends online as one of your favorite animals in whacky game modes. You can equip different items and skins to differentiate yourself from other players. Become King of the hill, wack some moles and steal eachothers tails to become the best brawl beast in this hilariously silly game. This game uses a  randomizer between game modes and maps, this way content can infinitely be added whether it be a new map or a new gamemode.</p>
+                            </div>
+                       </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- end about -->
+	
+	 <!-- info -->
+    <div id="info" class="info segments">
+        <div class="container">
+            <div class="box-content">
+				<div class="section-title">
+					<h2>My Work</h2>
+				</div>
+                        <div class="content-left">
+                            <div class="section-title section-title-left">
+                                <h3>Things I've Worked On</h3>
+                            </div>
+							<dl>
+								<li><span>Sound Manager & Sound Implementation</span> - As the name suggests, a Sound Manager for the Music & all the ingame sounds</li>
+								<li><span>Item System & All the usable items</span> - System for managing all the items in the game & the functionality for all the items <br>(Anvil, Hammer, Pepper, Shooting Fist, Bomb, Super Hammer, Beans, Bat)</li>
+								<li><span>Gamemode Base</span> - The Base of all the Gamemodes & All their multiplayer implementation</li>
+								<li><span>Brawl Gamemode</span> - A Gamemode in which you have to push each other off the map with the use of items</li>
+								<li><span>King of The Hill Gamemode</span> - A Gamemode in which you have conquer a random chosen part of the map</li>
+								<li><span>Tail Grabber Gamemode</span> - A Gamemode in which you have to capture the tail of the others players</li>
+								<li><span>Player Movement</span> - The movement used on all characters in the game & the animation implementation</li>
+								<li><span>Ice Plane</span> - A Script that simulates being on ice, making the player's movement 'slippery'</li>
+								<li><span>Periscope Manager</span> - Makes the periscopes come up & look around on the antarctica map</li>
+								<li><span>Water Splash</span> - Water Splash FX when you fall into the water</li>
+								<li><span>Hurt Script</span> - Blinks your mesh color to red when you get hurt</li>
+							</dl>
+
+                        </div>
+				
+                        <div class="content-left">
+                            <div class="section-title section-title-left">
+                                <h3>Sound Manager</h3>
+                            </div>
+                            <p>The <span>Sound Manager</span> is one of the biggers things i've made in this project. The way it works is it creates the <span>sounds</span> at the start of the game, linking it to a <span>GameObject</span> making it reusable.</p>
+                        </div>
+                    	<img src="images/brawlbeasts/soundmanagerstart.png" class="content-aligned"/>
+						<div class="content-left">
+                            <p>To call the sounds i've made a function called <span>GetSoundByName(string::soundName)</span> which returns <span>Sound</span>. Sound is the script the <span>audio data</span> is being stored in. It contains two methods: <span>Play</span> and <span>Stop</span>. Other than that it also contains the type of audio it is, in this case Master, FX and Music.
+							This info is used to determin the <span>volume</span> based on the users prefered settings.</p>
+                        </div>
+						<img src="images/brawlbeasts/applyvolume.png" class="content-aligned"/>
+						<div class="content-left">
+                            <p>This Manager also contains <span>Music Management</span> with sound easing. The way it works is with a function in the Manager called <span>SetCurrentMusic()</span>. This function calculates the steps it has to take for the music to smoothly transition between the previous and current music, and transitions between the two.</p>
+                        </div>
+						<img src="images/brawlbeasts/musictransition.png" class="content-aligned"/>
+
+
+						
+								
+            </div>
+        </div>
+    </div>
+    <!-- end about -->
+
+    <!-- footer -->
+    <div class="footer segments">
+        <div class="container">
+            <div class="box-content">
+                <p>Copyright © All Right Reserved</p>
+            </div>
+        </div>
+    </div>
+    <!-- end footer -->
+
+	<script src="js/loader.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.filterizr.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+</html>
