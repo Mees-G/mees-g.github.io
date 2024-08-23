@@ -1,0 +1,103 @@
+.loader-body{
+    width:100%;
+    height:100vh;
+    background-color:#212121;
+    position:fixed;
+    z-index:9999999;
+    visibility:visible;
+    top:0;
+    left:0;
+    text-align:center;
+    justify-content:center;
+    align-content:center;
+    transition:.5s
+}
+.loader-body.done{
+    visibility:hidden;
+    opacity:0
+}
+
+.pacman,.pacman::after,.pacman::before{
+    position:absolute;
+    box-sizing:border-box;
+}
+.pacman{
+    border:24px solid #fff;
+    left:calc(50% - 22.5px);
+	top:50%;
+    border-radius:50%;
+    animation:.5s linear infinite eat
+}
+.pacman::after,.pacman::before{
+    content:'';
+    left:50px;
+    transform:translateY(-50%);
+    background:#ff8c05;
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    opacity:0;
+    animation:1s linear infinite move
+}
+.pacman::before{
+    animation-delay:.5s
+}
+
+.pong {
+  position: absolute;
+  left:50%;
+  top:50%;
+  height: 40px;
+  width: 6px;
+  color: #FFF;
+  animation: paddles 0.75s ease-out infinite;
+}
+.pong:before {
+  content: "";
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 15px;
+  width: 12px;
+  height: 12px;
+  background-color: #ff8c05;
+  border-radius: 50%;
+  animation: ballbounce 0.6s ease-out infinite;
+}
+
+@keyframes paddles {
+  0% { box-shadow: -25px -10px, 25px 10px}
+  50% { box-shadow: -25px 8px, 25px -10px }
+  100% { box-shadow: -25px -10px, 25px 10px}
+}
+@keyframes ballbounce {
+  0% { transform: translateX(-20px) scale(1, 1.2) }
+  25% { transform: scale(1.2, 1) }
+  50% { transform: translateX(15px) scale(1, 1.2) }
+  75% { transform: scale(1.2, 1) }
+  100% { transform: translateX(-20px) }
+}
+
+@keyframes eat{
+    0%,49%{
+        border-right-color:#fff
+    }
+    100%,50%{
+        border-right-color:#0000
+    }
+}
+@keyframes move{
+    0%{
+        left:100px;
+        opacity:1
+    }
+    50%{
+        left:0;
+        opacity:1
+    }
+    100%,51%{
+        left:-10px;
+        opacity:0
+    }
+}
